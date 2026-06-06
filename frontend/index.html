@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthPulse AI | Next-Gen Diagnostics</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Scripts -->
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="fade-in">
+            <div class="logo-section">
+                <h1>HealthPulse AI</h1>
+                <p>Advanced Multi-Algorithm Diagnostic System</p>
+            </div>
+            <div class="status-badge" id="system-status">
+                <div class="status-dot"></div>
+                <span>AI Core Online</span>
+            </div>
+        </header>
+
+        <main class="main-grid">
+            <!-- Sidebar: Input Section -->
+            <aside class="card input-section fade-in" style="animation-delay: 0.1s;">
+                <h2>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    Analysis Setup
+                </h2>
+                
+                <div class="select-wrapper">
+                    <label class="input-label" for="disease-select">Target Condition</label>
+                    <select id="disease-select">
+                        <option value="heart_disease">❤️ Heart Disease</option>
+                        <option value="diabetes">🩸 Diabetes Mellitus</option>
+                        <option value="breast_cancer">🎗️ Breast Cancer</option>
+                    </select>
+                </div>
+
+                <div id="dynamic-form" class="form-grid">
+                    <!-- Dynamic fields will be injected here -->
+                </div>
+
+                <button id="predict-btn" class="btn-predict">
+                    Run Diagnostic Analysis
+                </button>
+            </aside>
+
+            <!-- Main: Results Section -->
+            <section class="results-view fade-in" style="animation-delay: 0.2s;">
+                <!-- Initial State -->
+                <div id="initial-message" class="card empty-state">
+                    <div class="empty-icon">🧬</div>
+                    <h3>Ready for Input</h3>
+                    <p>Configure patient parameters and run the analysis to generate a multi-model risk assessment report.</p>
+                </div>
+
+                <!-- Results Dashboard -->
+                <div id="results-display" class="dashboard-view" style="display: none;">
+                    <!-- Overview Stats -->
+                    <div class="stats-overview" id="algo-results">
+                        <!-- Stat cards injected here -->
+                    </div>
+
+                    <!-- Visualizations -->
+                    <div class="chart-grid">
+                        <div class="card">
+                            <h3 class="input-label">Probability Distribution</h3>
+                            <div id="probability-chart" style="height: 350px;"></div>
+                        </div>
+                        
+                        <div class="card metrics-section">
+                            <h3 class="input-label">AI Model Reliability</h3>
+                            <div id="model-metrics-list">
+                                <!-- Metrics bars injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
